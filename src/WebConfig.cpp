@@ -19,10 +19,10 @@ Dependencies:
 #include <WebConfig.h>
 #include <Arduino.h>
 #if defined(ESP32)
-  #include "SPIFFS.h"
+  #include "LittleFS.h"
   #include <WebServer.h>
 #else
-  #include <ESP8266WebServer.h>
+  #include <LittleFSReadServer.h>
 #endif
 #include <ArduinoJson.h>
 #include <FS.h>
