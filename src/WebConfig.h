@@ -12,7 +12,7 @@ The submitted data will bestored in the SPIFFS
 The library works with ESP8266 and ESP32
 
 Dependencies:
-  ESP8266WebServer.h
+  LittleFSReadServer.h
   ArduinoJson.h
 
 */
@@ -23,7 +23,7 @@ Dependencies:
 #if defined(ESP32)
   #include <WebServer.h>
 #else
-  #include <ESP8266WebServer.h>
+  #include <LittleFSReadServer.h>
 #endif
 
 //maximum number of parameters
