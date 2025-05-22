@@ -41,32 +41,32 @@ const char HTML_START[] PROGMEM =
 "<title>Configuration</title>\n"
 "</head>\n"
 "<body>\n"
-"<div id='main_div'>\n"
+"<div id='main_div' class='container my-3 col-xxl-4 col-xl-4 col-lg-5 col-md-6'>\n"
 "<div class='titel'>Configuration %s</div>\n"
 "<form method='post'>\n";
 
 //Template for one input field
 const char HTML_ENTRY_SIMPLE[] PROGMEM =
 "  <div class='zeile'><b>%s</b></div>\n"
-"  <div class='zeile'><input type='%s' value='%s' name='%s'></div>\n";
+"  <div class='zeile'><input class='form-control' type='%s' value='%s' name='%s'></div>\n";
 const char HTML_ENTRY_AREA[] PROGMEM =
 "  <div class='zeile'><b>%s</b></div>\n"
-"  <div class='zeile'><textarea rows='%i' cols='%i' name='%s'>%s</textarea></div>\n";
+"  <div class='zeile'><textarea class='form-control' rows='%i' cols='%i' name='%s'>%s</textarea></div>\n";
 const char HTML_ENTRY_NUMBER[] PROGMEM =
 "  <div class='zeile'><b>%s</b></div>\n"
-"  <div class='zeile'><input type='number' min='%i' max='%i' value='%s' name='%s'></div>\n";
+"  <div class='zeile'><input class='form-control' type='number' min='%i' max='%i' value='%s' name='%s'></div>\n";
 const char HTML_ENTRY_RANGE[] PROGMEM =
 "  <div class='zeile'><b>%s</b></div>\n"
-"  <div class='zeile'>%i&nbsp;<input type='range' min='%i' max='%i' value='%s' name='%s'>&nbsp;%i</div>\n";
+"  <div class='zeile'>%i&nbsp;<input class='form-control' type='range' min='%i' max='%i' value='%s' name='%s'>&nbsp;%i</div>\n";
 const char HTML_ENTRY_CHECKBOX[] PROGMEM =
-"  <div class='zeile'><b>%s</b><input type='checkbox' %s name='%s'></div>\n";
+"  <div class='zeile'><b>%s</b><input class='form-check-input' type='checkbox' %s name='%s'></div>\n";
 const char HTML_ENTRY_RADIO_TITLE[] PROGMEM =
 " <div class='zeile'><b>%s</b></div>\n";
 const char HTML_ENTRY_RADIO[] =
-"  <div class='zeile'><input type='radio' name='%s' value='%s' %s>%s</div>\n";
+"  <div class='zeile'><input class='form-check-input' type='radio' name='%s' value='%s' %s>%s</div>\n";
 const char HTML_ENTRY_SELECT_START[] PROGMEM =
 " <div class='zeile'><b>%s</b></div>\n"
-" <div class='zeile'><select name='%s'>\n";
+" <div class='zeile'><select class='form-select' name='%s'>\n";
 const char HTML_ENTRY_SELECT_OPTION[] PROGMEM =
 "  <option value='%s' %s>%s</option>\n";
 const char HTML_ENTRY_SELECT_END[] PROGMEM =
@@ -75,14 +75,18 @@ const char HTML_ENTRY_MULTI_START[] PROGMEM =
 " <div class='zeile'><b>%s</b></div>\n"
 " <div class='zeile'><fieldset style='text-align:left;'>\n";
 const char HTML_ENTRY_MULTI_OPTION[] PROGMEM =
-"  <input type='checkbox' name='%s', value='%i' %s>%s<br>\n";
+"  <input type='checkbox' class='form-check-input' name='%s', value='%i' %s>%s<br>\n";
 const char HTML_ENTRY_MULTI_END[] PROGMEM =
 " </fieldset></div>\n";
 
 //Template for save button and end of the form with save
 const char HTML_END[] PROGMEM =
-"<div class='zeile'><button type='submit' name='SAVE'>Save</button>\n"
-"<button type='submit' name='RST'>Restart</button></div>\n"
+"<div class='zeile'><button class='btn btn-primary' type='submit' name='SAVE'>Save</button>\n"
+"<button class='btn btn-warning' type='submit' name='RST'>Restart</button></div>\n"
+"<div class='mb-3'>\n"
+			"<a href='javascript:history.back()'>Back</a> |\n"
+			"<a href='/'>Home</a>"
+		</div>
 "</form>\n"
 "</div>\n"
     "<script src='jquery.min.js'></script>\n"
@@ -91,7 +95,7 @@ const char HTML_END[] PROGMEM =
 "</html>\n";
 //Template for save button and end of the form without save
 const char HTML_BUTTON[] PROGMEM =
-"<button type='submit' name='%s'>%s</button>\n";
+"<button class='btn btn-primary' type='submit' name='%s'>%s</button>\n";
 
 WebConfig::WebConfig() {
   _apName = "";
