@@ -1,8 +1,8 @@
 /*
 
 File WebConfig.cpp
-Version 1.4.2
-Author Gerald Lechner
+Version 1.4.3
+Author Gerald Lechner + ogursoft
 contakt lechge@gmail.com
 
 Description
