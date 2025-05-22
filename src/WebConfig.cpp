@@ -12,7 +12,7 @@ The submitted data will bestored in the LittleFS
 The library works with ESP8266 and ESP32
 
 Dependencies:
-  ESP8266WebServer.h
+  LittleFSReadServer.h
   ArduinoJson.h
 
 */
