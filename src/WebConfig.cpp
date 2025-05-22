@@ -8,7 +8,7 @@ contakt lechge@gmail.com
 Description
 This library builds a web page with a smart phone friendly form to edit
 a free definable number of configuration parameters.
-The submitted data will bestored in the SPIFFS
+The submitted data will bestored in the LittleFS
 The library works with ESP8266 and ESP32
 
 Dependencies:
@@ -184,9 +184,9 @@ void WebConfig::addDescription(String parameter){
   }
   _apName = WiFi.macAddress();
   _apName.replace(":","");
-  if (!SPIFFS.begin()) {
-    SPIFFS.format();
-    SPIFFS.begin();
+  if (!LittleFS.begin()) {
+    LittleFS.format();
+    LittleFS.begin();
   }
 };
 
@@ -404,11 +404,11 @@ boolean WebConfig::readConfig(const char * filename){
   String line,name,value;
   uint8_t pos;
   int16_t index;
-  if (!SPIFFS.exists(filename)) {
+  if (!LittleFS.exists(filename)) {
     //if configfile does not exist write default values
     writeConfig(filename);
   }
-  File f = SPIFFS.open(filename,"r");
+  File f = LittleFS.open(filename,"r");
   if (f) {
     Serial.println(F("Read configuration"));
     uint32_t size = f.size();
@@ -447,7 +447,7 @@ boolean WebConfig::readConfig(){
 //write configuration to file
 boolean WebConfig::writeConfig(const char * filename){
   String val;
-  File f = SPIFFS.open(filename,"w");
+  File f = LittleFS.open(filename,"w");
   if (f) {
     f.printf("apName=%s\n",_apName.c_str());
     for (uint8_t i = 0; i<_count; i++){
@@ -468,7 +468,7 @@ boolean WebConfig::writeConfig(){
 }
 //delete configuration file
 boolean WebConfig::deleteConfig(const char * filename){
-  return SPIFFS.remove(filename);
+  return LittleFS.remove(filename);
 }
 //delete default configutation file
 boolean WebConfig::deleteConfig(){
