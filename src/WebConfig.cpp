@@ -86,7 +86,7 @@ const char HTML_END[] PROGMEM =
 "<div class='mb-3'>\n"
 			"<a href='javascript:history.back()'>Back</a> |\n"
 			"<a href='/'>Home</a>"
-		</div>
+		"</div>"
 "</form>\n"
 "</div>\n"
     "<script src='jquery.min.js'></script>\n"
